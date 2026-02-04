@@ -67,42 +67,42 @@ const SmartKrishiLanding = () => {
             title: "AI Crop Disease Detection",
             description: "Advanced deep learning models analyze your crop images instantly. Upload photos of leaves or plants, and receive immediate diagnosis with disease identification, severity assessment, and treatment recommendations within seconds.",
             features: ["Instant AI Analysis", "95%+ Accuracy", "Treatment Guidance", "Visual Comparison"],
-            image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop"
+            image: "/Ai_farming.jpg"
           },
           {
             icon: Calendar,
             title: "Smart Farming Calendar",
             description: "Automated scheduling system tailored to your crops. Get personalized reminders for irrigation, fertilizer application, pesticide spraying, and optimal harvesting times based on crop type, sowing date, and local weather conditions.",
             features: ["Auto Scheduling", "SMS Alerts", "Weather Integration", "Custom Timings"],
-            image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop"
+            image: "/farming_calender.jpg"
           },
           {
             icon: TrendingUp,
             title: "Market Intelligence & Mandi Prices",
             description: "Real-time access to agricultural market data. Compare prices across multiple mandis, check government MSP rates, track price trends, and identify the most profitable selling locations for your produce.",
             features: ["Live Mandi Rates", "MSP Information", "Price Trends", "Best Market Finder"],
-            image: "https://images.unsplash.com/photo-1611696426740-7c5ee97df0db?w=400&h=300&fit=crop"
+            image: "/market_access.jpg"
           },
           {
             icon: DollarSign,
             title: "Intelligent Profit Estimation",
             description: "Comprehensive financial planning tool that calculates total input costs, predicts expected yield based on crop health data, estimates revenue at current market prices, and provides detailed profit-loss analysis before harvesting.",
             features: ["Cost Tracking", "Yield Prediction", "Revenue Forecast", "ROI Analysis"],
-            image: "https://images.unsplash.com/photo-1554224311-beee2c201c7d?w=400&h=300&fit=crop"
+            image: "/farmer4.jpg"
           },
           {
             icon: BarChart3,
             title: "Crop Health Tracking",
             description: "Continuous monitoring system with historical analysis. Upload images periodically to track crop progress over time, detect new diseases early, compare growth patterns, and receive health scores with visual progress reports.",
             features: ["Progress Tracking", "Health Scores", "Trend Analysis", "Early Warnings"],
-            image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop"
+            image: "/crop_health.jpg"
           },
           {
             icon: Shield,
             title: "Pesticide & Medicine Advisor",
             description: "Expert recommendations for crop treatment. Get precise pesticide suggestions, correct dosage information, safe application methods, and links to nearby agricultural stores or online purchase options.",
             features: ["Smart Recommendations", "Dosage Calculator", "Store Locator", "Safety Guidelines"],
-            image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=300&fit=crop"
+            image: "/watering1.jpg"
           }
         ]
       },
@@ -144,7 +144,7 @@ const SmartKrishiLanding = () => {
             number: "01",
             title: "Register Your Crop",
             description: "Start by registering your crop details including crop name, sowing date, location, and soil type. This helps our AI understand your specific farming context.",
-            image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop"
+            image: "/different_crops.jpg"
           },
           {
             number: "02",
@@ -445,7 +445,7 @@ const SmartKrishiLanding = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3"> 
               <img 
-                src="/logo2.png" 
+                src="/logo.png" 
                 alt="SmartKrishi Logo" 
                 className="h-16 w-auto object-contain"
               />
@@ -528,7 +528,7 @@ const SmartKrishiLanding = () => {
                 </div>
                 <div className="space-y-4 pt-8">
                   <img 
-                    src="/crop2.jpg" 
+                    src="/tech1.jpg" 
                     alt="Indian farmer" 
                     className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -607,12 +607,12 @@ const SmartKrishiLanding = () => {
                   className="rounded-xl shadow-lg w-full h-32 object-cover"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1611696426740-7c5ee97df0db?w=300&h=200&fit=crop" 
+                  src="/saling_market.jpg" 
                   alt="Market access" 
                   className="rounded-xl shadow-lg w-full h-32 object-cover"
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1554224311-beee2c201c7d?w=300&h=200&fit=crop" 
+                  src="/farmer2.jpg" 
                   alt="Profit growth" 
                   className="rounded-xl shadow-lg w-full h-32 object-cover"
                 />
@@ -641,7 +641,7 @@ const SmartKrishiLanding = () => {
             <div className="text-center">
               <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-2xl border-4 border-green-200 hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=400&h=400&fit=crop&crop=faces" 
+                  src="/farmer5.jpg" 
                   alt="Indian farmer working" 
                   className="w-full h-full object-cover"
                 />
@@ -657,7 +657,7 @@ const SmartKrishiLanding = () => {
             <div className="text-center">
               <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-2xl border-4 border-green-200 hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=400&h=400&fit=crop&crop=faces" 
+                  src="/farmer1.jpg" 
                   alt="Farmer in field" 
                   className="w-full h-full object-cover"
                 />
@@ -673,7 +673,7 @@ const SmartKrishiLanding = () => {
             <div className="text-center">
               <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-2xl border-4 border-green-200 hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=400&fit=crop&crop=faces" 
+                  src="/mordern_farmers.jpg" 
                   alt="Modern farming technology" 
                   className="w-full h-full object-cover"
                 />
@@ -689,7 +689,7 @@ const SmartKrishiLanding = () => {
             <div className="text-center">
               <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-2xl border-4 border-green-200 hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=faces" 
+                  src="/women2.png" 
                   alt="Woman farmer" 
                   className="w-full h-full object-cover"
                 />
@@ -708,7 +708,7 @@ const SmartKrishiLanding = () => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=400&fit=crop" 
+                  src="/crop2.jpg" 
                   alt="Rice fields" 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
@@ -728,7 +728,7 @@ const SmartKrishiLanding = () => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=500&h=400&fit=crop" 
+                  src="/diversity.jpg" 
                   alt="Diverse crops" 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
@@ -748,7 +748,7 @@ const SmartKrishiLanding = () => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="h-64 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=500&h=400&fit=crop" 
+                  src="/crop4.jpg" 
                   alt="Sustainable farming" 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
@@ -1047,7 +1047,7 @@ const SmartKrishiLanding = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 to-transparent"></div>
                   </div>
                   
-                  <div className="p-8 text-center">
+                  <div className="p-9 text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-black -mt-14 border-4 border-white shadow-lg">
                       {step.number}
                     </div>
@@ -1159,7 +1159,7 @@ const SmartKrishiLanding = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
               <img 
-                src="/logo2.png" 
+                src="/logo.png" 
                 alt="SmartKrishi Logo" 
                 className="h-12 w-auto object-contain"
               />
