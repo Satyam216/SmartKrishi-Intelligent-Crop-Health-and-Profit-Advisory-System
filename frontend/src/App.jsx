@@ -5,7 +5,9 @@ import Landing from './pages/Landing';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import CropCalendar from './pages/CropCalendar';
 import { Toaster } from "react-hot-toast";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
+          <Route path="/crop-calendar" element={<ProtectedRoute> <CropCalendar /> </ProtectedRoute>} />
         </Routes>
       </Router>
     </AuthProvider>
