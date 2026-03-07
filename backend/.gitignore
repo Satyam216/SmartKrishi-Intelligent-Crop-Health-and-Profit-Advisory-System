@@ -1,0 +1,4 @@
+config/firebaseServiceKey.json
+node_modules
+.env
+.git

@@ -211,7 +211,7 @@ const SmartKrishiLanding = () => {
       cta: {
         title: "Ready to Transform Your Farming?",
         subtitle: "Join thousands of farmers already using SmartKrishi to increase their yields and profits",
-        button: "Login with Google",
+        button: "Click here for Login",
         note: "Free to get started • No credit card required"
       }
     },

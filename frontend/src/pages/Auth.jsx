@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import Login from "../components/Login";
-import Signup from "../components/Signup";
+import Login from "./Login";
+import Signup from "./Signup";
 import { ArrowRight } from "lucide-react";
 
 const Auth = () => {

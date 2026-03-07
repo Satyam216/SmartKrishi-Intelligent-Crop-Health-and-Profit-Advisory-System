@@ -113,6 +113,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Get Firebase Auth Token
+const getAuthToken = async () => {
+  const user = auth.currentUser;
+
+  if (!user) {
+    return null;
+  }
+
+  const token = await user.getIdToken();
+  return token;
+};
+
   // Get user data from Firestore
   const getUserData = async (uid) => {
     try {
@@ -148,6 +160,7 @@ export const AuthProvider = ({ children }) => {
     loginWithFacebook,
     logout,
     getUserData,
+    getAuthToken
   };
 
   return (
