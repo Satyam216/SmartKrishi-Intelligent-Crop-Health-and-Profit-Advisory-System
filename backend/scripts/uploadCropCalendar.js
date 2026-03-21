@@ -12,7 +12,7 @@ fs.createReadStream("data/crop_calendar.csv")
   )
   .on("data", (row) => {
 
-    const state = row.State?.trim();
+    const state = row.State?.trim().toUpperCase();
     const district = row.District?.trim().toUpperCase();
     const crop = row.Crop?.trim();
     const season = row.Season?.trim();

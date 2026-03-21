@@ -15,7 +15,7 @@ router.get("/states", async (req, res) => {
 
 router.get("/districts/:state", async (req, res) => {
 
-  const state = req.params.state.toUpperCase();
+  const state = req.params.state;
 
   const doc = await db.collection("locations").doc(state).get();
 

@@ -19,7 +19,6 @@ export const apiRequest = async (endpoint, options = {}) => {
       ...options.headers
     };
 
-    // ❗ Content-Type सिर्फ JSON request में लगाओ
     if (!(options.body instanceof FormData)) {
       headers["Content-Type"] = "application/json";
     }
