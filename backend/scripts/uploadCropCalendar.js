@@ -14,7 +14,7 @@ fs.createReadStream("data/crop_calendar.csv")
 
     const state = row.State?.trim().toUpperCase();
     const district = row.District?.trim().toUpperCase();
-    const crop = row.Crop?.trim();
+    const crop = row.Crop?.trim();  
     const season = row.Season?.trim();
 
     if (!state || !district || !crop || !season) return;
