@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import locationRoutes from "./routes/locationRoutes.js";
 import cropCalendarRoutes from "./routes/cropCalendarRoutes.js";
+import predictRoute from "./routes/predict.js";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use("/api/upload", uploadRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/api/predict", predictRoute);
 
 app.use("/api/location", locationRoutes);
 app.use("/api/crop-calendar", cropCalendarRoutes);
