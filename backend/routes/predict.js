@@ -2,10 +2,9 @@ import express from "express";
 import multer from "multer";
 import axios from "axios";
 import FormData from "form-data";
+import { db } from "../config/firebaseAdmin.js";
 
 const router = express.Router();
-
-// multer setup
 const upload = multer({ storage: multer.memoryStorage() });
 
 router.post("/", upload.single("file"), async (req, res) => {
@@ -15,12 +14,11 @@ router.post("/", upload.single("file"), async (req, res) => {
       return res.status(400).json({ error: "No file uploaded" });
     }
 
-    // 🔥 prepare form data
+    // 🔥 send to ML service
     const formData = new FormData();
     formData.append("file", req.file.buffer, req.file.originalname);
 
-    // 🔥 call Python ML API
-    const response = await axios.post(
+    const mlResponse = await axios.post(
       "http://127.0.0.1:5001/predict",
       formData,
       {
@@ -32,9 +30,9 @@ router.post("/", upload.single("file"), async (req, res) => {
       }
     );
 
-    const data = response.data;
+    const data = mlResponse.data;
 
-    // 🔥 handle ML error (low confidence / unsupported)
+    // ❌ ML error
     if (data.error) {
       return res.status(400).json({
         error: data.error,
@@ -42,10 +40,45 @@ router.post("/", upload.single("file"), async (req, res) => {
       });
     }
 
-    // ✅ send clean response
+    const predictions = data.top_predictions || [];
+
+    // 🔥 FETCH FIRESTORE DATA
+    const results = await Promise.all(
+      predictions.map(async (item) => {
+        try {
+          // 🔥 MATCH SAME ID FORMAT
+          const id = `${item.crop}_${item.defect}`.replace(/\//g, "-");
+
+          const doc = await db
+            .collection("crop_disease_solution")
+            .doc(id)
+            .get();
+
+          if (doc.exists) {
+            return {
+              ...item,
+              details: doc.data(),
+            };
+          } else {
+            return {
+              ...item,
+              details: null,
+            };
+          }
+        } catch (err) {
+          console.error("Firestore Error:", err.message);
+          return {
+            ...item,
+            details: null,
+          };
+        }
+      })
+    );
+
+    // ✅ FINAL RESPONSE
     return res.status(200).json({
       success: true,
-      predictions: data.top_predictions,
+      results,
     });
 
   } catch (error) {
