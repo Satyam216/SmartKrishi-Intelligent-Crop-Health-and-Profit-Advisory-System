@@ -1,3 +1,13 @@
 .env
 frontend/.env
 backend/.env
+
+venv/
+ml-services/venv/
+node_modules/
+
+*.keras
+*.h5
+*.pb
+
+__pycache__/
