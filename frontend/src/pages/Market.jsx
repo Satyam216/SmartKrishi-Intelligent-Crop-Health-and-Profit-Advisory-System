@@ -16,7 +16,7 @@ const Market = () => {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ✅ FORMAT FUNCTION (FIX CASE ISSUE)
+  // FORMAT FUNCTION (FIX CASE ISSUE)
   const formatText = (str) => {
     if (!str) return "";
     return str
@@ -26,7 +26,7 @@ const Market = () => {
       .join(" ");
   };
 
-  // 🔥 LOAD STATES
+  // LOAD STATES
   useEffect(() => {
     const fetchStates = async () => {
       const snapshot = await getDocs(collection(db, "locations"));
@@ -37,7 +37,7 @@ const Market = () => {
     fetchStates();
   }, []);
 
-  // 🔥 LOAD DISTRICTS BASED ON STATE
+  // LOAD DISTRICTS BASED ON STATE
   useEffect(() => {
     if (!state) return;
 
@@ -54,7 +54,7 @@ const Market = () => {
     fetchDistricts();
   }, [state]);
 
-  // 🔥 SEARCH FUNCTION (FINAL FIX)
+  // SEARCH FUNCTION (FINAL FIX)
   const handleSearch = async () => {
 
     if (!state) {
@@ -64,7 +64,7 @@ const Market = () => {
     try {
       setLoading(true);
 
-      // ✅ convert for API
+      // convert for API
       const formattedState = formatText(state);
       const formattedDistrict = formatText(district);
 
@@ -108,7 +108,7 @@ const Market = () => {
             className="border p-2 rounded-lg"
           />
 
-          {/* ✅ STATE DROPDOWN */}
+          {/* STATE DROPDOWN */}
           <select
             value={state}
             onChange={(e) => {
@@ -126,7 +126,7 @@ const Market = () => {
             ))}
           </select>
 
-          {/* ✅ DISTRICT DROPDOWN */}
+          {/* DISTRICT DROPDOWN */}
           <select
             value={district}
             onChange={(e) => setDistrict(e.target.value)}
@@ -204,7 +204,7 @@ const Market = () => {
         </div>
       )}
 
-      {/* ❌ NO DATA */}
+      {/* NO DATA */}
       {result && !result.success && (
         <div className="bg-red-100 p-4 rounded-lg text-red-700">
           {result.message}

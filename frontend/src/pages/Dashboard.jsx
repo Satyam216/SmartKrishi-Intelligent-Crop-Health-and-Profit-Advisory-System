@@ -84,17 +84,17 @@ const Dashboard = () => {
   fetchLocation();
 }, []);
 
-  // 🔥 receive data from PredictCard
+  // receive data from PredictCard
   const handleResult = (data) => {
     setAnalysis(data);
   };
 
-  // 🔥 total crops count (unique)
+  // total crops count (unique)
   const totalCrops = analysis?.results
     ? new Set(analysis.results.map((r) => r.crop)).size + 1
     : 0;
 
-  // 🔥 dynamic greeting
+  // dynamic greeting
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) return "Good Morning ☀️";

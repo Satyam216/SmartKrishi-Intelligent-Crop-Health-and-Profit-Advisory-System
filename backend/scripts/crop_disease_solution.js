@@ -15,13 +15,13 @@ fs.createReadStream("data/crop_disease_solutions.csv")
       const crop = row.crop?.trim();
       const disease = row.disease?.trim();
 
-      // ❌ skip invalid
+      // skip invalid
       if (!crop || !disease) {
         console.log("Skipped:", row);
         return;
       }
 
-      // 🔥 ID EXACT SAME (NO CHANGE)
+      // ID EXACT SAME (NO CHANGE)
       const id = `${crop}_${disease}`
                     .replace(/\//g, "-")
                     .replace(/#/g, "")
@@ -69,7 +69,7 @@ fs.createReadStream("data/crop_disease_solutions.csv")
       chunk.forEach((item) => {
         const ref = db
           .collection("crop_disease_solution")
-          .doc(item.id); // 🔥 EXACT ID
+          .doc(item.id); // EXACT ID
 
         batch.set(ref, item);
       });

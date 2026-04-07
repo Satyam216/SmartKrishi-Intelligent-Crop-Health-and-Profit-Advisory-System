@@ -41,7 +41,6 @@ const Navbar = () => {
 
           {navItem(<BarChart3 size={18} />, "Dashboard", "/dashboard")}
           {navItem(<User size={18} />, "Profile", "/profile")}
-          {navItem(<Leaf size={18} />, "My Crops", "/crops")}
           {navItem(<Calendar size={18} />, "Farming Calendar", "/crop-calendar")}
           {navItem(<TrendingUp size={18} />, "Market Prices", "/market")}
 
@@ -71,7 +70,6 @@ const Navbar = () => {
 
           {navItem(<BarChart3 size={18} />, "Dashboard", "/dashboard")}
           {navItem(<User size={18} />, "Profile", "/profile")}
-          {navItem(<Leaf size={18} />, "My Crops", "/crops")}
           {navItem(<Calendar size={18} />, "Farming Calendar", "/crop-calendar")}
           {navItem(<TrendingUp size={18} />, "Market Prices", "/market")}
 

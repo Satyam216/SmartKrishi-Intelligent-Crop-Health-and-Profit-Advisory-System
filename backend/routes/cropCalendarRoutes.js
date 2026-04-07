@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 
     const doc = await db.collection("crop_calendar").doc(docId).get();
 
-    // ✅ SAFE CHECK
+    // SAFE CHECK
     if (!doc.exists) {
       console.log("Document not found");
       return res.json([]);
@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
 
   } catch (error) {
 
-    console.error("ERROR:", error); // 🔥 IMPORTANT
+    console.error("ERROR:", error); // IMPORTANT
     res.status(500).json({ message: "Failed to fetch crops" });
 
   }

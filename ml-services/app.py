@@ -70,7 +70,7 @@ def predict():
 
         prediction = model.predict(processed)[0]
 
-        # 🔥 TOP 3 predictions
+        # TOP 3 predictions
         top_indices = prediction.argsort()[-3:][::-1]
 
         results = []
@@ -84,7 +84,7 @@ def predict():
                 "confidence": round(float(prediction[i]) * 100, 2)
             })
 
-        # 🔥 LOW CONFIDENCE CHECK
+        # LOW CONFIDENCE CHECK
         return jsonify({
             "top_predictions": results
         })

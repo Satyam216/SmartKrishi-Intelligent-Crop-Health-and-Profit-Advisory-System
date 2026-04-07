@@ -37,7 +37,7 @@ const PredictCard = ({ onResult }) => {
       }
 
       setResult(res);
-      onResult && onResult(res); // 🔥 send to dashboard
+      onResult && onResult(res); // send to dashboard
 
     } catch (err) {
       console.error(err);
@@ -78,7 +78,7 @@ const PredictCard = ({ onResult }) => {
         {loading ? "Analyzing..." : "🔍 Analyze Crop"}
       </button>
 
-      {/* 🔥 BLOCK 1: AI PREDICTIONS */}
+      {/* BLOCK 1: AI PREDICTIONS */}
       {result && result.results && (
         <div className="mt-6">
 
@@ -107,7 +107,7 @@ const PredictCard = ({ onResult }) => {
         </div>
       )}
 
-      {/* 🔥 BLOCK 2: DETAILED RESULTS */}
+      {/* BLOCK 2: DETAILED RESULTS */}
       {result && result.results && (
         <div className="mt-6">
 

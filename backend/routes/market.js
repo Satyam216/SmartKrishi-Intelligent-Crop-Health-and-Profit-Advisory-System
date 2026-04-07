@@ -23,20 +23,20 @@ router.get("/", async (req, res) => {
 
     const records = response.data.records;
 
-    // 🥇 STEP 1: District filter
+    // STEP 1: District filter
     let districtData = records.filter(r =>
       r.district?.toLowerCase() === district?.toLowerCase()
     );
 
     let isFallback = false;
 
-    // 🥈 STEP 2: fallback to state
+    //STEP 2: fallback to state
     if (!districtData.length) {
       districtData = records;
       isFallback = true;
     }
 
-    // 🥉 STEP 3: crop filter
+    // STEP 3: crop filter
     const filtered = districtData.filter(r =>
       r.commodity?.toLowerCase().includes(crop.toLowerCase())
     );
@@ -49,7 +49,7 @@ router.get("/", async (req, res) => {
       });
     }
 
-    // 🏆 STEP 4: best mandi
+    // STEP 4: best mandi
     const best = filtered.reduce((a, b) =>
       Number(b.modal_price) > Number(a.modal_price) ? b : a
     );

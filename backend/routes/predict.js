@@ -9,12 +9,9 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 router.post("/", upload.single("file"), async (req, res) => {
   try {
-    // ❌ no file
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded" });
     }
-
-    // 🔥 send to ML service
     const formData = new FormData();
     formData.append("file", req.file.buffer, req.file.originalname);
 
@@ -32,7 +29,6 @@ router.post("/", upload.single("file"), async (req, res) => {
 
     const data = mlResponse.data;
 
-    // ❌ ML error
     if (data.error) {
       return res.status(400).json({
         error: data.error,
@@ -42,11 +38,11 @@ router.post("/", upload.single("file"), async (req, res) => {
 
     const predictions = data.top_predictions || [];
 
-    // 🔥 FETCH FIRESTORE DATA
+    //FETCH FIRESTORE DATA
     const results = await Promise.all(
       predictions.map(async (item) => {
         try {
-          // 🔥 MATCH SAME ID FORMAT
+          // MATCH SAME ID FORMAT
           const id = `${item.crop}_${item.defect}`.replace(/\//g, "-");
 
           const doc = await db
@@ -75,7 +71,7 @@ router.post("/", upload.single("file"), async (req, res) => {
       })
     );
 
-    // ✅ FINAL RESPONSE
+    // FINAL RESPONSE
     return res.status(200).json({
       success: true,
       results,
