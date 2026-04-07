@@ -1,6 +1,7 @@
 .env
 frontend/.env
 backend/.env
+backend/config/firebaseServiceKey.json
 
 venv/
 ml-services/venv/
