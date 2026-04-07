@@ -15,8 +15,9 @@ router.post("/", upload.single("file"), async (req, res) => {
     const formData = new FormData();
     formData.append("file", req.file.buffer, req.file.originalname);
 
+    const ML_URL = process.env.ML_SERVICE_URL || "http://127.0.0.1:5001";
     const mlResponse = await axios.post(
-      "http://127.0.0.1:5001/predict",
+      `${ML_URL}/predict`,
       formData,
       {
         headers: {
